@@ -13,15 +13,15 @@ source=("https://www.kernel.org/pub/linux/utils/util-linux/v2.42/${pkgname}-${pk
 sha256sums=('SKIP')
 
 build() {
-     meson setup "${srcdir}/${pkgname}-${pkgver}" build \
-         --prefix=/usr \
-         --sysconfdir=/etc \
-         --localstatedir=/var \
-         -Dbuild-agetty=disabled \
-         -Dsystemd=disabled \
-         -Dpam=enabled \
-         -Dselinux=disabled
-      meson compile -C build
+    meson setup "${srcdir}/${pkgname}-${pkgver}" build \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --localstatedir=/var \
+        -Dbuild-agetty=disabled \
+        -Dbuild-pam=enabled \
+        -Dsystemd=disabled \
+        -Dselinux=disabled
+    meson compile -C build
 }
 
 package() {
