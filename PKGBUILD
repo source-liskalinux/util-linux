@@ -18,7 +18,6 @@ build() {
         --sysconfdir=/etc \
         --localstatedir=/var \
         -Dbuild-agetty=disabled \
-        -Dbuild-pam=enabled \
         -Dsystemd=disabled \
         -Dselinux=disabled
     meson compile -C build
