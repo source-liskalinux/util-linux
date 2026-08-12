@@ -13,7 +13,7 @@ source=("https://www.kernel.org/pub/linux/utils/util-linux/v2.42/${pkgname}-${pk
 sha256sums=('SKIP')
 
 build() {
-  meson setup "${pkgname}-${pkgver}" build \
+  meson setup "${srcdir}/${pkgname}-${pkgver}" build \
     --prefix=/usr \
     --sysconfdir=/etc \
     --localstatedir=/var \
