@@ -1,3 +1,8 @@
+# PKGBUILD For util-linux and util-linux-libs
+
+# Contributor: Janorovic Volkov <janorovicvolkov@gmail.com>
+# Maintainer: Janorovic Volkov <janorovicvolkov@gmail.com>
+
 pkgname=util-linux
 pkgver=2.42.2
 pkgrel=1
@@ -8,7 +13,6 @@ license=('GPL-2.0-or-later' 'LGPL-2.1-or-later' 'BSD-3-Clause')
 depends=('pam' 'shadow' 'libcap-ng' 'zlib' 'ncurses')
 makedepends=('meson' 'ninja' 'gettext' 'bzip2')
 provides=('libblkid' 'libuuid' 'libfdisk' 'libmount' 'libsmartcols')
-conflicts=('util-linux-systemd')
 source=("https://www.kernel.org/pub/linux/utils/util-linux/v2.42/${pkgname}-${pkgver}.tar.xz")
 sha256sums=('SKIP')
 
