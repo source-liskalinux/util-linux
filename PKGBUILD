@@ -26,7 +26,7 @@ build() {
         -Dsystemd=disabled \
         -Dselinux=disabled \
         -Dcryptsetup=enabled \
-        -Dcryptsetup-dlopen=true
+        -Dcryptsetup-dlopen=enabled
     meson compile -C build
 }
 
