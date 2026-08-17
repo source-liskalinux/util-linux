@@ -11,7 +11,8 @@ arch=('x86_64')
 url="https://github.com/util-linux/util-linux"
 license=('GPL-2.0-or-later' 'LGPL-2.1-or-later' 'BSD-3-Clause')
 depends=('pam' 'shadow' 'libcap-ng' 'zlib' 'ncurses')
-makedepends=('meson' 'ninja' 'gettext' 'bzip2')
+makedepends=('meson' 'ninja' 'gettext' 'bzip2' 'cryptsetup')
+optdepends=('cryptsetup')
 provides=('libblkid' 'libuuid' 'libfdisk' 'libmount' 'libsmartcols')
 source=("https://www.kernel.org/pub/linux/utils/util-linux/v2.42/${pkgname}-${pkgver}.tar.xz")
 sha256sums=('SKIP')
@@ -23,7 +24,9 @@ build() {
         --localstatedir=/var \
         -Dbuild-agetty=disabled \
         -Dsystemd=disabled \
-        -Dselinux=disabled
+        -Dselinux=disabled \
+        -Dcryptsetup=enabled \
+        -Dcryptsetup-dlopen=true
     meson compile -C build
 }
 
