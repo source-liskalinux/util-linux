@@ -22,7 +22,6 @@ build() {
         --prefix=/usr \
         --sysconfdir=/etc \
         --localstatedir=/var \
-        -Dbuild-agetty=disabled \
         -Dsystemd=disabled \
         -Dselinux=disabled \
         -Dcryptsetup=enabled \
